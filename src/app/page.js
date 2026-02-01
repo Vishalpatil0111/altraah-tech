@@ -51,8 +51,8 @@ export default function HomePage() {
       const tl = gsap.timeline()
       
       tl.fromTo(titleRef.current, 
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+        { opacity: 0, scale: 1.5 },
+        { opacity: 1, scale: 1, duration: 1, delay: 0.3, ease: "power3.out" }
       )
       .fromTo(statsRef.current?.children || [], 
         { opacity: 0, y: 20 },
@@ -103,8 +103,7 @@ export default function HomePage() {
             <motion.div 
               ref={titleRef}
               initial={{ opacity: 0, scale: 1.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+              animate={{ opacity: 0, scale: 1.5 }}
               className="mb-8"
             >
               <h1 className="poppins-bold text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-2 bg-linear-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent">
