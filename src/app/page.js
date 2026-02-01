@@ -9,6 +9,11 @@ import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/ui/WhatsAppButton'
 import { categories } from '@/data/lightProducts'
 
+let loaderFinished = false
+if (typeof window !== 'undefined') {
+  setTimeout(() => { loaderFinished = true }, 1600)
+}
+
 const slides = [
   {
     id: 1,
@@ -37,17 +42,26 @@ export default function HomePage() {
   const statsRef = useRef(null)
 
   useEffect(() => {
-    const tl = gsap.timeline()
-    
-    tl.fromTo(titleRef.current, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
-    )
-    .fromTo(statsRef.current?.children || [], 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" },
-      "-=0.3"
-    )
+    const checkLoader = () => {
+      if (window.location.pathname === '/' && !loaderFinished) {
+        setTimeout(checkLoader, 100)
+        return
+      }
+      
+      const tl = gsap.timeline()
+      
+      tl.fromTo(titleRef.current, 
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
+      )
+      .fromTo(statsRef.current?.children || [], 
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" },
+        "-=0.3"
+      )
+    }
+
+    checkLoader()
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)

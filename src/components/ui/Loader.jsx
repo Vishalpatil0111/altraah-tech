@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 
+let loaderFinished = false
+
 export default function Loader() {
   const [isVisible, setIsVisible] = useState(false)
   const pathname = usePathname()
@@ -12,6 +14,7 @@ export default function Loader() {
     setIsVisible(true)
     const timer = setTimeout(() => {
       setIsVisible(false)
+      loaderFinished = true
     }, 1500)
 
     return () => clearTimeout(timer)
@@ -20,7 +23,7 @@ export default function Loader() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-slate-900 flex items-center justify-center">
+    <div className="fixed inset-0 z-9999 bg-slate-900 flex items-center justify-center">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 gap-4 h-full">
@@ -70,7 +73,7 @@ export default function Loader() {
 
         {/* Loading Bar */}
         <div className="w-64 h-1 bg-slate-700 rounded-full mx-auto overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full animate-loading-bar" />
+          <div className="h-full bg-linear-to-r from-blue-500 to-blue-400 rounded-full animate-loading-bar" />
         </div>
 
         {/* Loading Text */}
@@ -116,3 +119,5 @@ export default function Loader() {
     </div>
   )
 }
+
+export { loaderFinished }

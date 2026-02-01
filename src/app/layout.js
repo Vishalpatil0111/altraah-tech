@@ -26,6 +26,11 @@ export const metadata = {
   publisher: 'Altraah',
   category: 'Electronics Manufacturing',
   classification: 'LED PCB Manufacturing',
+  icons: {
+    icon: '/images/logo/logo.png',
+    shortcut: '/images/logo/logo.png',
+    apple: '/images/logo/logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
