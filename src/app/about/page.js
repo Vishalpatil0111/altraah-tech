@@ -36,7 +36,7 @@ export default function AboutPage() {
       <Navbar /> 
       <main className="pt-20"> 
         {/* Hero Section */} 
-        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black py-12 sm:py-16 md:py-20 overflow-hidden"> 
+        <section className="relative bg-linear-to-br from-gray-900 via-gray-800 to-black py-12 sm:py-16 md:py-20 overflow-hidden"> 
           <div className="absolute inset-0"> 
             <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div> 
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div> 
@@ -55,7 +55,7 @@ export default function AboutPage() {
                 <span className="text-xs font-medium text-blue-200">About Altraah</span> 
               </div> 
 
-              <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent"> 
+              <h1 className="poppins-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 bg-linear-to-r from-white via-blue-200 to-blue-400 bg-clip-text "> 
                 Leading LED PCB Manufacturer 
               </h1> 
 
@@ -116,7 +116,7 @@ export default function AboutPage() {
           </div> 
         </section> 
         {/* Stats Section */} 
-        <section ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-900 to-black"> 
+        <section ref={statsRef} className="py-12 sm:py-16 md:py-20 bg-linear-to-br from-gray-900 to-black"> 
           <div className="container mx-auto px-4 sm:px-6"> 
             <motion.div 
               initial={{ opacity: 0, y: 30 }} 
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 viewport={{ once: true }} 
                 className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300" 
               > 
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-6"> 
+                <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-6"> 
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /> 
                   </svg> 
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 viewport={{ once: true }} 
                 className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300" 
               > 
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-6"> 
+                <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-6"> 
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /> 
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /> 
@@ -344,7 +344,7 @@ export default function AboutPage() {
                   viewport={{ once: true }} 
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
                 > 
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 text-white"> 
+                  <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 text-white"> 
                     {feature.icon} 
                   </div> 
                   <h3 className="text-lg font-bold text-gray-900 mb-3"> 
@@ -378,11 +378,11 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-center"> 
               {[ 
-                { name: "IndiaMART", logo: "https://via.placeholder.com/200x100/ffffff/1e293b?text=IndiaMART" }, 
-                { name: "MSME", logo: "https://via.placeholder.com/200x100/ffffff/1e293b?text=MSME" }, 
-                { name: "Make in India", logo: "https://via.placeholder.com/200x100/ffffff/1e293b?text=Make+in+India" }, 
-                { name: "GST Certified", logo: "https://via.placeholder.com/200x100/ffffff/1e293b?text=GST" }, 
-                { name: "Udyog Aadhaar", logo: "https://via.placeholder.com/200x100/ffffff/1e293b?text=Udyog+Aadhaar" } 
+                { name: "IndiaMART", logo: "/images/companies/indiamart.jpg" }, 
+                { name: "MSME", logo: "/images/companies/msme.jpg" }, 
+                { name: "Make in India", logo: "/images/companies/mid.avif" }, 
+                { name: "GST Certified", logo: "/images/companies/gst.jpg" }, 
+                { name: "Udyog Aadhaar", logo: "/images/companies/udyoog.jpg" } 
               ].map((cert, index) => ( 
                 <motion.div  
                   key={index} 
